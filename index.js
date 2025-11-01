@@ -15,7 +15,11 @@ const notificationRoutes = require("./routes/notifactionRoute");
 const { notFound, errorHandler } = require("./middlewares/errorMiddelware");
 const User = require("./models/user");
 // Middleware
-app.use(cors()); // ✅ Enable CORS so your frontend can call the API
+app.use(cors(
+  {
+    origin: "*",
+  }
+)); // ✅ Enable CORS so your frontend can call the API
 app.use(express.json()); // ✅ Parse JSON requests
 connectDB();
 
